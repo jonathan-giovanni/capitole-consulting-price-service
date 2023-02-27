@@ -3,11 +3,14 @@ package com.capitoleconsulting.price.service.application.search;
 import com.capitoleconsulting.price.service.domain.exception.PriceNotFoundException;
 import com.capitoleconsulting.price.service.domain.model.Price;
 import com.capitoleconsulting.price.service.domain.port.SearchPriceRepository;
+import org.springframework.stereotype.Component;
 
 import java.time.LocalDateTime;
 import java.util.Comparator;
 
+@Component
 public class SearchPrice {
+
     private final SearchPriceRepository searchPriceRepository;
 
     public SearchPrice(SearchPriceRepository searchPriceRepository) {

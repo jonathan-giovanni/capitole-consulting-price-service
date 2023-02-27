@@ -30,6 +30,10 @@ public record PriceResponse(
         @Schema(description = "Updated at time",example = "2023-02-26T20:53:04.663Z")
         @JsonProperty LocalDateTime updatedAt
 ) {
+    public PriceResponse(){
+        this(null,null,null,null,null,null,null,null,null);
+    }
+
     public PriceResponse(Long brandId, LocalDateTime startDate, LocalDateTime endDate, Long priceList, Long productId, Integer priority, BigDecimal price, String currency, LocalDateTime updatedAt) {
         this.brandId = brandId;
         this.startDate = startDate;

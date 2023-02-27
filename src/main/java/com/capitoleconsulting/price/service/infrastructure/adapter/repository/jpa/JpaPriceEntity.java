@@ -10,7 +10,7 @@ import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 @Entity
-@Table(name = "PRODUCT")
+@Table(name = "PRICES")
 public class JpaPriceEntity {
     @EmbeddedId
     protected JpaPriceEntityPk pk;

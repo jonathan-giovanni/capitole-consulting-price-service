@@ -9,18 +9,13 @@ import java.time.LocalDateTime;
  * @company Finansoportes Consulting
  * @created 27/02/2023
  */
-public class ErrorResponse {
-    @JsonProperty
-    private final LocalDateTime timestamp;
-    @JsonProperty
-    private final Integer status;
-    @JsonProperty
-    private final String error;
-    @JsonProperty
-    private final String message;
-    @JsonProperty
-    private final String path;
-
+public record ErrorResponse(
+        @JsonProperty LocalDateTime timestamp,
+        @JsonProperty Integer status,
+        @JsonProperty String error,
+        @JsonProperty String message,
+        @JsonProperty String path
+) {
     public ErrorResponse(LocalDateTime timestamp, Integer status, String error, String message, String path) {
         this.timestamp = timestamp;
         this.status = status;

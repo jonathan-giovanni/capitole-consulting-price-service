@@ -10,26 +10,17 @@ import java.time.LocalDateTime;
  * @company Finansoportes Consulting
  * @created 27/02/2023
  */
-public class PriceResponse {
-    @JsonProperty
-    private final Long brandId;
-    @JsonProperty
-    private final LocalDateTime startDate;
-    @JsonProperty
-    private final LocalDateTime endDate;
-    @JsonProperty
-    private final Long priceList;
-    @JsonProperty
-    private final Long productId;
-    @JsonProperty
-    private final Integer priority;
-    @JsonProperty
-    private final BigDecimal price;
-    @JsonProperty
-    private final String currency;
-    @JsonProperty
-    private final LocalDateTime updatedAt;
-
+public record PriceResponse(
+        @JsonProperty Long brandId,
+        @JsonProperty LocalDateTime startDate,
+        @JsonProperty LocalDateTime endDate,
+        @JsonProperty Long priceList,
+        @JsonProperty Long productId,
+        @JsonProperty Integer priority,
+        @JsonProperty BigDecimal price,
+        @JsonProperty String currency,
+        @JsonProperty LocalDateTime updatedAt
+) {
     public PriceResponse(Long brandId, LocalDateTime startDate, LocalDateTime endDate, Long priceList, Long productId, Integer priority, BigDecimal price, String currency, LocalDateTime updatedAt) {
         this.brandId = brandId;
         this.startDate = startDate;

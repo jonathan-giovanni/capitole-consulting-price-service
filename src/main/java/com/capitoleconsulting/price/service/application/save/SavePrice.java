@@ -19,9 +19,7 @@ public class SavePrice {
     }
 
     public void execute(){
-        var loadedData = loadPriceRepository.loadPrices();
-        log.info("Loaded data: {}",loadedData.count());
-        savePriceRepository.saveAll(loadedData);
+        savePriceRepository.saveAll(loadPriceRepository.loadPrices());
     }
 
 

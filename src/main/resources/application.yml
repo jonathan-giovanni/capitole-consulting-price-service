@@ -1,3 +1,6 @@
 spring:
   application:
     name: capitole-consulting-price-service
+
+server:
+  port: 8090

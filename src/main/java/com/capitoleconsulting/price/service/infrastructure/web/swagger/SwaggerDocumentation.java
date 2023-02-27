@@ -19,7 +19,7 @@ public class SwaggerDocumentation {
     public OpenAPI customOpenAPI() {
         return new OpenAPI()
                 .components(new Components())
-                .info(new Info().title("PRICE-SERVICE").description(
+                .info(new Info().title("CAPITOLE-CONSULTING-PRICE-SERVICE").description(
                         "Price microservice API doc by OpenAPI 3.").version("1.0.0"));
     }
 

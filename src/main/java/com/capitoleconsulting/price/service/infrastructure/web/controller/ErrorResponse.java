@@ -10,23 +10,24 @@ import java.time.LocalDateTime;
  * @created 27/02/2023
  */
 public record ErrorResponse(
-        @Schema(description = "Error timestamp",example = "2023-02-26T20:53:04.663Z")
-        @JsonProperty LocalDateTime timestamp,
+        @Schema(description = "Error type",example = "about:blank")
+        @JsonProperty String type,
+        @Schema(description = "Error title",example = "Price not found")
+        @JsonProperty String title,
         @Schema(description = "Error status code",example = "404")
         @JsonProperty Integer status,
-        @Schema(description = "Error title",example = "Price not found")
-        @JsonProperty String error,
-        @Schema(description = "Error message",example = "Price not found with the given id")
-        @JsonProperty String message,
+
+        @Schema(description = "Error detail",example = "Price not found with the given id")
+        @JsonProperty String detail,
         @Schema(description = "Requested path",example = "/v1/price/")
-        @JsonProperty String path
+        @JsonProperty String instance
 ) {
-    public ErrorResponse(LocalDateTime timestamp, Integer status, String error, String message, String path) {
-        this.timestamp = timestamp;
+    public ErrorResponse(String type,String title,Integer status, String detail, String instance) {
+        this.type = type;
+        this.title = title;
         this.status = status;
-        this.error = error;
-        this.message = message;
-        this.path = path;
+        this.detail = detail;
+        this.instance = instance;
     }
 
 }

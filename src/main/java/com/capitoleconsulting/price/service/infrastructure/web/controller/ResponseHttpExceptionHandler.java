@@ -22,14 +22,14 @@ public class ResponseHttpExceptionHandler extends ResponseEntityExceptionHandler
     @ExceptionHandler(Exception.class)
     public final ResponseEntity<ErrorResponse> handleAllExceptions(Exception ex, WebRequest request) {
         var path = ((ServletWebRequest)request).getRequest().getRequestURI();
-        var errorResponse = new ErrorResponse(LocalDateTime.now(), HttpStatus.INTERNAL_SERVER_ERROR.value(),"Internal Server Error",ex.getMessage(),path);
+        var errorResponse = new ErrorResponse("internal:Error","Internal Server Error",HttpStatus.INTERNAL_SERVER_ERROR.value(),ex.getMessage(),path);
         return new ResponseEntity<>(errorResponse, HttpStatus.INTERNAL_SERVER_ERROR);
     }
 
     @ExceptionHandler(PriceNotFoundException.class)
     public final ResponseEntity<ErrorResponse> notFoundPriceException(Exception ex, WebRequest request) {
         var path = ((ServletWebRequest)request).getRequest().getRequestURI();
-        var errorResponse = new ErrorResponse(LocalDateTime.now(), HttpStatus.NOT_FOUND.value(),"Not Found Price","Not found price with the given params",path);
+        var errorResponse = new ErrorResponse("request:Error","Not Found Price",HttpStatus.NOT_FOUND.value(),"Not found price with the given params",path);
         return new ResponseEntity<>(errorResponse, HttpStatus.NOT_FOUND);
     }
 

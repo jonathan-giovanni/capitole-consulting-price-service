@@ -1,6 +1,6 @@
 package com.capitoleconsulting.price.service.application.save;
 
-import com.capitoleconsulting.price.service.application.PriceTestStub;
+import com.capitoleconsulting.price.service.PriceTestStub;
 import com.capitoleconsulting.price.service.domain.exception.LoadPriceException;
 import com.capitoleconsulting.price.service.domain.port.LoadPriceRepository;
 import com.capitoleconsulting.price.service.domain.port.SavePriceRepository;

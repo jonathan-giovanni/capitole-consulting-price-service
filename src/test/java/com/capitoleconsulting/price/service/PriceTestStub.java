@@ -1,4 +1,4 @@
-package com.capitoleconsulting.price.service.application;
+package com.capitoleconsulting.price.service;
 
 import com.capitoleconsulting.price.service.domain.model.Price;
 

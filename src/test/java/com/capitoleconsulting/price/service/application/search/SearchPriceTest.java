@@ -1,6 +1,6 @@
 package com.capitoleconsulting.price.service.application.search;
 
-import com.capitoleconsulting.price.service.application.PriceTestStub;
+import com.capitoleconsulting.price.service.PriceTestStub;
 import com.capitoleconsulting.price.service.domain.exception.PriceNotFoundException;
 import com.capitoleconsulting.price.service.domain.port.SearchPriceRepository;
 import org.junit.jupiter.api.Assertions;

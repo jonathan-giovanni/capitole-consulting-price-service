@@ -16,7 +16,7 @@ import java.time.LocalDateTime;
  * @created 27/02/2023
  */
 @RestController
-@RequestMapping("/api/v1/product/")
+@RequestMapping("/api/v1/price/")
 public class PriceController {
 
     private final SearchPrice searchPrice;
@@ -25,8 +25,7 @@ public class PriceController {
         this.searchPrice = searchPrice;
     }
 
-
-    @GetMapping("/price/product/{productId}/brand/{brandId}/date/{applicationDate}")
+    @GetMapping("/product/{productId}/brand/{brandId}/date/{applicationDate}")
     public ResponseEntity<PriceResponse> findProductPrice(@PathVariable Long productId, @PathVariable Long brandId, @PathVariable LocalDateTime applicationDate) {
         var data = searchPrice.execute(applicationDate,productId,brandId);
         return new ResponseEntity<>(new PriceResponse(

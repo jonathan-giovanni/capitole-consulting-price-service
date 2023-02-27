@@ -4,3 +4,6 @@ spring:
 
 server:
   port: 8090
+
+initial-data:
+  path: src/main/resources/data.csv

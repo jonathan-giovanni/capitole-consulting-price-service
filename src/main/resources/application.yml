@@ -1,9 +1,17 @@
 spring:
   application:
     name: capitole-consulting-price-service
-
+  datasource:
+    driverClassName: org.h2.Driver
+  h2:
+    console:
+      enabled: true
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
 server:
   port: 8090
+
+
 
 initial-data:
   path: src/main/resources/data.csv

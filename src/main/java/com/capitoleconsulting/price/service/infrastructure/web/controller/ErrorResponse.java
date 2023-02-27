@@ -1,4 +1,4 @@
-package com.capitoleconsulting.price.service.infrastructure.web;
+package com.capitoleconsulting.price.service.infrastructure.web.controller;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 

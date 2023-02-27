@@ -1,4 +1,4 @@
-package com.capitoleconsulting.price.service.infrastructure.web;
+package com.capitoleconsulting.price.service.infrastructure.web.controller;
 
 import com.capitoleconsulting.price.service.application.search.SearchPrice;
 import org.springframework.http.HttpStatus;

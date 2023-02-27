@@ -1,10 +1,9 @@
 package com.capitoleconsulting.price.service.application.save;
 
 import com.capitoleconsulting.price.service.application.PriceTestStub;
-import com.capitoleconsulting.price.service.application.search.SearchPrice;
+import com.capitoleconsulting.price.service.domain.exception.LoadPriceException;
 import com.capitoleconsulting.price.service.domain.port.LoadPriceRepository;
 import com.capitoleconsulting.price.service.domain.port.SavePriceRepository;
-import com.capitoleconsulting.price.service.domain.port.SearchPriceRepository;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -32,6 +31,11 @@ public class SavePriceTest {
         Mockito.doNothing().when(savePriceRepository).saveAll(PriceTestStub.expectedPrices);
     }
 
+    private void mock_load_data_throws_error(){
+        log.info("Mock load prices throws error");
+        Mockito.when(loadPriceRepository.loadPrices()).thenThrow(LoadPriceException.class);
+    }
+
     @BeforeEach
     void setupTest(){
         log.info("Setup test");
@@ -46,5 +50,18 @@ public class SavePriceTest {
         mock_save_data_in_repository();
         savePrice.execute();
     }
+
+    @Test
+    void loadAndSavePricesExpectedLoadPriceException() {
+        mock_load_data_throws_error();
+        mock_save_data_in_repository();
+
+        Assertions.assertThrows(
+                LoadPriceException.class,
+                () -> savePrice.execute()
+        );
+    }
+
+
 
 }

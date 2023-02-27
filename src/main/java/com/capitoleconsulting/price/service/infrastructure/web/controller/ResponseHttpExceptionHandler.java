@@ -13,7 +13,6 @@ import java.time.LocalDateTime;
 
 /**
  * @author Jonathan Giovanni Hernandez
- * @company Finansoportes Consulting
  * @created 27/02/2023
  */
 

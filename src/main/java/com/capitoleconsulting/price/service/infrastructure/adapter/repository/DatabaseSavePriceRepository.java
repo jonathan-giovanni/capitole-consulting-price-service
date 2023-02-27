@@ -6,12 +6,10 @@ import com.capitoleconsulting.price.service.infrastructure.adapter.repository.jp
 import com.capitoleconsulting.price.service.infrastructure.adapter.repository.jpa.JpaPriceRepository;
 import org.springframework.stereotype.Component;
 
-import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 /**
  * @author Jonathan Giovanni Hernandez
- * @company Finansoportes Consulting
  * @created 27/02/2023
  */
 @Component

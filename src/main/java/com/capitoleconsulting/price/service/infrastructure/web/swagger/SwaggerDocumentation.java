@@ -9,7 +9,6 @@ import io.swagger.v3.oas.models.info.Info;
 
 /**
  * @author Jonathan Giovanni Hernandez
- * @company Finansoportes Consulting
  * @created 27/02/2023
  */
 @Configuration

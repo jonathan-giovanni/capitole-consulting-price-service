@@ -9,7 +9,6 @@ import org.springframework.context.annotation.Configuration;
 
 /**
  * @author Jonathan Giovanni Hernandez
- * @company Finansoportes Consulting
  * @created 27/02/2023
  */
 @Configuration

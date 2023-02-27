@@ -1,6 +1,6 @@
 package com.capitoleconsulting.price.service.infrastructure.web;
 
-import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
@@ -10,16 +10,24 @@ import java.time.LocalDateTime;
  * @company Finansoportes Consulting
  * @created 27/02/2023
  */
-@JsonInclude(JsonInclude.Include.NON_NULL)
 public class PriceResponse {
+    @JsonProperty
     private final Long brandId;
+    @JsonProperty
     private final LocalDateTime startDate;
+    @JsonProperty
     private final LocalDateTime endDate;
+    @JsonProperty
     private final Long priceList;
+    @JsonProperty
     private final Long productId;
+    @JsonProperty
     private final Integer priority;
+    @JsonProperty
     private final BigDecimal price;
+    @JsonProperty
     private final String currency;
+    @JsonProperty
     private final LocalDateTime updatedAt;
 
     public PriceResponse(Long brandId, LocalDateTime startDate, LocalDateTime endDate, Long priceList, Long productId, Integer priority, BigDecimal price, String currency, LocalDateTime updatedAt) {
@@ -32,41 +40,5 @@ public class PriceResponse {
         this.price = price;
         this.currency = currency;
         this.updatedAt = updatedAt;
-    }
-
-    public Long getBrandId() {
-        return brandId;
-    }
-
-    public LocalDateTime getStartDate() {
-        return startDate;
-    }
-
-    public LocalDateTime getEndDate() {
-        return endDate;
-    }
-
-    public Long getPriceList() {
-        return priceList;
-    }
-
-    public Long getProductId() {
-        return productId;
-    }
-
-    public Integer getPriority() {
-        return priority;
-    }
-
-    public BigDecimal getPrice() {
-        return price;
-    }
-
-    public String getCurrency() {
-        return currency;
-    }
-
-    public LocalDateTime getUpdatedAt() {
-        return updatedAt;
     }
 }

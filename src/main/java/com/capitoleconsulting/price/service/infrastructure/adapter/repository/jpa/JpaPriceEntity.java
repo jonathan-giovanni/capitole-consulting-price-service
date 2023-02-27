@@ -8,6 +8,7 @@ import jakarta.validation.constraints.NotNull;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
+import java.util.StringJoiner;
 
 @Entity
 @Table(name = "PRICES")
@@ -128,4 +129,17 @@ public class JpaPriceEntity {
         return pk.getProductId();
     }
 
+
+    @Override
+    public String toString() {
+        return new StringJoiner(", ", JpaPriceEntity.class.getSimpleName() + "[", "]")
+                .add("pk=" + (pk!=null?pk.toString():"null"))
+                .add("startDate=" + startDate)
+                .add("endDate=" + endDate)
+                .add("priority=" + priority)
+                .add("price=" + price)
+                .add("currency='" + currency + "'")
+                .add("updatedAt=" + updatedAt)
+                .toString();
+    }
 }

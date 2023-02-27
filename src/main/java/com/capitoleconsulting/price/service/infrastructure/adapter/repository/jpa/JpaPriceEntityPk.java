@@ -6,6 +6,7 @@ import jakarta.persistence.Embeddable;
 import jakarta.validation.constraints.NotNull;
 
 import java.io.Serializable;
+import java.util.StringJoiner;
 
 @Embeddable
 public class JpaPriceEntityPk implements Serializable {
@@ -58,5 +59,14 @@ public class JpaPriceEntityPk implements Serializable {
 
     public void setProductId(Long productId) {
         this.productId = productId;
+    }
+
+    @Override
+    public String toString() {
+        return new StringJoiner(", ", JpaPriceEntityPk.class.getSimpleName() + "[", "]")
+                .add("brandId=" + brandId)
+                .add("priceList=" + priceList)
+                .add("productId=" + productId)
+                .toString();
     }
 }
